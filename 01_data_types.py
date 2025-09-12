@@ -86,7 +86,7 @@ Print both the original list and both joined strings.
 """
 print()
 print("------task-6------")
-fav_subjects = ["Mathematics", "FSD", "Digital Logics", "Physics", "Chemistry"]
+fav_subjects = ["Mathematics", "FSD", "Digital Logics", "Physics", "Chemistry"] #list of subjects
 fav_subject_string = ", ".join(fav_subjects)
 fav_subject_string2 = "-".join(fav_subjects)
 print(fav_subjects)
