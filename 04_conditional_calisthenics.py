@@ -59,14 +59,18 @@ If the order weight is less than 0 kg, return an error message.
 '''
 print()
 print('-------task5-----')
-x = "Zone A"
-y = "Zone B"
-zone = input("Enter the zone :")
-weight = int(input("Enter the weight :"))
-
-if zone == "A" or "Zone A":
-    cost = weight * 5
-    print(f"Shipping cost is {cost}")
+zone = input("Enter the zone :").strip().upper() 
+weight = float(input("Enter the weight :")) 
+cost = weight * 5 #cost for zone A
+cost2 = weight * 7 #cost for zone B
+if weight <= 0:
+    print("Please type a correct weight. ")#error for inorrect weight
+elif zone == "A" or zone == "ZONE A":
+    print(f"Shipping cost is {cost} dollars per kilogram")
+elif zone == "B" or zone == "ZONE B":
+    print(f"Shipping cost is {cost2} dollars per kilogram")
+else:
+    print("Try again with correct zone please. ")#Output if wrong zone is inputed
 
 
 '''
@@ -74,3 +78,18 @@ Exercise 6:
 Determine the type of a triangle based on side lengths.
 Equilateral, Isosceles, Scalene, or Not a triangle.
 '''
+print()
+print('----------task6---------')
+#user inputs
+side1 = int(input("Enter value of one side of the triangle :"))
+side2 = int(input("Enter value for second side :"))
+side3 = int(input("Enter value for third side :"))
+
+if side1 == side2 == side3: #for equilateral
+    print("Equilateral Triangle")
+elif side1 == side2 != side3 or side1 != side2 == side3:#isosceles
+    print("Isosceles Triangle")
+elif side1 != side2 != side3 and side1 + side2 > side3 or side1 + side3 > side2 or side2 + side3 > side1:#scalene
+    print("Scalene Triangle")
+elif side1 + side2 < side3 or side1 + side3 < side2 or side2 + side3 < side1:#invalid triangle
+    print("Not a triangle")
