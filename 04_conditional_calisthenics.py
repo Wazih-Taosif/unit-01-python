@@ -89,7 +89,12 @@ if side1 == side2 == side3: #for equilateral
     print("Equilateral Triangle")
 elif side1 == side2 != side3 or side1 != side2 == side3:#isosceles
     print("Isosceles Triangle")
-elif side1 != side2 != side3 and side1 + side2 > side3 or side1 + side3 > side2 or side2 + side3 > side1:#scalene
-    print("Scalene Triangle")
-elif side1 + side2 < side3 or side1 + side3 < side2 or side2 + side3 < side1:#invalid triangle
-    print("Not a triangle")
+elif side1 != side2 != side3:
+    if side1 + side2 < side3:
+        print("Invalid Triangle.")
+    elif side1 + side3 < side2:
+        print("Invalid Triangle.")
+    elif side2 + side3 < side1:
+        print("Invalid Triangle")
+    else:
+        print("Scalene Triangle")
