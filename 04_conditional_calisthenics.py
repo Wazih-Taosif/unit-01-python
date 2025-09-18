@@ -43,12 +43,13 @@ else:
     print("No, that fruit is not in the list.")
 print()
 
-
 '''
 Exercise 4:
 Check if a year is a century year and a leap year.
 '''
 print()
+print('----------task4--------')
+year = int(input("Enter a year :"))
 
 
 '''
