@@ -50,6 +50,12 @@ Check if a year is a century year and a leap year.
 print()
 print('----------task4--------')
 year = int(input("Enter a year :"))
+divisor = 400 #diving year by 400 will let us know if it is leap year and century year or not.
+result = year % divisor #dividing given year by 400
+if result == 0:
+    print("The year is a century year and a leap year.")
+else:
+    print("It is not a leap year and a century year.")
 
 
 '''
@@ -85,7 +91,6 @@ print('----------task6---------')
 side1 = int(input("Enter value of one side of the triangle :"))
 side2 = int(input("Enter value for second side :"))
 side3 = int(input("Enter value for third side :"))
-
 if side1 == side2 == side3: #for equilateral
     print("Equilateral Triangle")
 elif side1 == side2 != side3 or side1 != side2 == side3:#isosceles
@@ -98,4 +103,4 @@ elif side1 != side2 != side3:
     elif side2 + side3 < side1:
         print("Invalid Triangle")
     else:
-        print("Scalene Triangle")
+        print("Scalene Triangle")#scalene
