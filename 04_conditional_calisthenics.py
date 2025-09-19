@@ -50,12 +50,22 @@ Check if a year is a century year and a leap year.
 print()
 print('----------task4--------')
 year = int(input("Enter a year :"))
-divisor = 400 #diving year by 400 will let us know if it is leap year and century year or not.
-result = year % divisor #dividing given year by 400
-if result == 0:
+divisor1 = 100 #dividing year by 100 will tell us if the year is century year
+divisor2 = 4 # dividing year by 4 will tell us if year is leap year.
+divisor3 = 400 #diving year by 400 will let us know if it is leap year and century year or not.
+result1 = year % divisor1
+result2 = year % divisor2
+result3 = year % divisor3 #dividing given year by 400
+
+#when the following result is 0. meaning remainder is 0. That equates True.
+if result3 == 0:
     print("The year is a century year and a leap year.")
+elif result1 == 0:
+    print("The year is a century year but NOT a leap year.")
+elif result2 == 0:
+    print("The year is a leap year but NOT a century year")
 else:
-    print("It is not a leap year and a century year.")
+    print("The year is neither a century year or a leap year.")
 
 
 '''
