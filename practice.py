@@ -1,24 +1,24 @@
-n1 = 0 # 1st term is 0
-n2 = 1 # 2nd term is 1
-nth_term = int(input("Enter the nth_term you want to see the fibonacci printed :")) # user says till which nth term we want to print the Fibonacci
-nth = nth_term - 2 # this is done in order to print the first two terms (n1 and n2) 
-while nth_term <= 0: #checking if nth term is valid or not.
-    print("Enter a valid nth term please")
-    nth_term = int(input("Enter the nth_term you want to see the fibonacci printed :"))
-if nth_term == 1: #will just print 0
-    print("Fibonacci sequence for {0} term is :".format(nth_term))
-    print(n1)
-if nth_term == 2: #Will print both 0 and 1
-    print("Fibonacci sequence for {0} terms is :".format(nth_term))
-    print(n1)
-    print(n2)
-if nth_term > 2:
-    print("The Fibonacci is: ") #Prints the first 2 terms, 0 and 1
-    print(n1)
-    print(n2)
-    while nth >= 1:
-        n3 = n1 + n2 # the next term(n3) or the 'third' term is the sum of previous term(n1) and current term(n2)  
-        n1 = n2 #current term(n2) becomes previous term(n1) for the next iteration
-        n2 = n3 #next term(n3) becomes the current term(n2) for the next iteration
-        print(n3) #printing all next term(n3) values, untill condition is False
-        nth -= 1 
+"""
+5. Sum of Digits:
+Write a program that calculates the sum of the digits of a given number using a while loop.
+"""
+
+number = input("Enter a number :")  #user inputs a number. Could be negative number too
+
+list_number = list(number) #convert the user input from string to list
+length_number = len(number) #calculating the length of the number. In other words the total number of digits the number has
+
+if list_number[0] == "-": #This code will run if the user gives a negative number. It checks if the index 0 in the list has (-) sign or not
+    del list_number[0] #removes the (-) sign from the list
+    length_number = length_number - 1 # decreasing the length of the list because minus sign is removed
+
+n = 0 #this indicates index value for list. n = 0 meaning it starts from index 0.
+sum = 0 #At the start we have sum = 0
+
+while length_number >= 1:
+    sum = int(list_number[n]) + sum # New value of variable "sum" is adding previous indexes with current index
+    n = n + 1 #Index number increments by 1
+    length_number -= 1 #length number decrements by 1 so that it will end the loop when codition becomes false.
+print(sum) # It prints the sum of the digits.
+
+    
