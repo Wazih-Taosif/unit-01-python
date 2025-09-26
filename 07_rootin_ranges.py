@@ -51,4 +51,10 @@ for i in range(rows):
         print('*', end=' ')
     print()
 
-print("The output is * repeated several times in 5 rows.")
+#The output is * repeated several times in 5 rows. Each row getting 1 extra asterisk then the previous row.
+
+# The first for loop repeats to the equal number of rows(5). In the second loop. Value of i is incremented by 1 each time, and thus changes the range every iteration. Thus,
+#printing '*' the exact amount as the range in the second loop.
+
+#The print() is also important since it makes sure that the asterisks dont get printed in one single line. This occurs because right after the "for j loop" executes, the print()
+#of the "for i loop" executes, creating invisible block, thus making the next set of asterisks print in the next line.

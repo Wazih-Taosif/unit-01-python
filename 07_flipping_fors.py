@@ -53,4 +53,5 @@ dictionary = {
 }
 for x in dictionary:
     print(x) #prints all the keys of the dictionary.
-print("Not what I thought. I thought it would print the values and keys both. But it printed only the keys")
+
+#Not what I thought. I thought it would print the values and keys both. But it printed only the keys
