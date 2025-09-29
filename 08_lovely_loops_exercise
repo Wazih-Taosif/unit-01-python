@@ -1,32 +1,31 @@
-
-username = input("Enter username: ")
+username = input("Enter username: ").lower().strip() # user inputs a username
 security_level = input("Enter the security level, Low / Medium / High :").lower().strip()
-lockout_threshold = int(input("Enter lockout threshold: "))
+lockout_threshold = int(input("Enter lockout threshold: ")) # this sets the amount of attempts the user gets
 
-password_guess = input("Guess the correct password for your chosen security level :") # user guesses the password
+username_guess = input("Guess your username. Or type quit if you can't:").lower().strip() # user guesses the password
 
 attempts = 0
 login_successful = False
 
-if security_level == "low":
-    password = "password"
-    while password_guess != password:
-        attempts += 1
-        if attempts == lockout_threshold:
-            break
-        print("Incorrect password. Try again.")
-        password_guess = input("Guess the correct password for your chosen security level :")
+while username_guess != username: # while user doesnt guesses the username correctly
+    if username_guess == "quit":
+        print(f"You decided to quit guessing the Password.") # will print if user decides to quit
+        break
+    attempts += 1 # increases the amount of attempts the user had.
+    if attempts + 10 == lockout_threshold:
+        print(f"You dont have much attempt left.")
+    elif attempts + 5 == lockout_threshold:
+        print(f"You dont have much tries left. Be careful your account will be locked.")
+    elif attempts + 1 == lockout_threshold:
+        print(f"Carefull, you only have 1 more try left, before your account is blocked.")
+    elif attempts == lockout_threshold: # highest amount of attempt reached.
+        print(f"You reached the highest amount of attempts of {lockout_threshold}. You can't proceed further.")
+        break
+    username_guess = input("Guess your username. Or type quit if you can't:") # user tries guessing the pass again.
+else:
+    login_successful = True #the user successfully logined
+if login_successful:
+    if attempts + 1 == 1:
+        print(f"You guessed the password correctly in {attempts + 1} guess") # guess since singular for 1 guess
     else:
-        attempts += 1
-        print(f"You guessed the password. You took {attempts} attempts")
-elif security_level == "medium":
-    password = "PassW@rd123"
-    while password_guess != password:
-        attempts += 1
-        if attempts == lockout_threshold:
-            break
-        print("Incorrect password. Tru again.")
-        password_guess = input("Guess the correct password for your chosen security level :")
-    else:
-        attempts += 1
-        print(f"You guessed the password. You took {attempts} attempts")
+        print(f"You guessed the password correctly in {attempts + 1} guesses") # guesses since plural for multiple guess

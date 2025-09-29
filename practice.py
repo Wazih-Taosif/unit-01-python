@@ -1,11 +1,17 @@
-"""
-Challenges number 1
-Write a Python program that takes a string and counts how many vowels
-"""
+username = input("Enter username: ").lower().strip() # user inputs a username
+security_level = input("Enter the security level, Low / Medium / High :").lower().strip()
+lockout_threshold = int(input("Enter lockout threshold: ")) # this sets the amount of attempts the user gets
 
-text = input("Write something :").lower()
-n = 0
-for x in text:
-    if x == "a" or x == "e" or x == "i" or x == "o" or x == "u":
-        n += 1
-print(f"The number of vowels the sentence has is: {n}")
+password = input("Guess your username. Or type quit if you can't:").lower().strip() # user guesses the password
+
+attempts = 0
+login_successful = False
+
+while attempts != lockout_threshold:
+    attempts += 1
+    if security_level == "low":
+        if password == "guest":
+            print("You guessed the password correctly.")
+        else:
+            print("Incorrect password") 
+            password = input("Guess your username. Or type quit if you can't:").lower().strip() # user guesses the password again
