@@ -16,14 +16,14 @@ while True:
     if add_remove_edit_clear == "add":
         adding_todo = input("What is your new to-do? ").strip()
         to_do_list.append(adding_todo) #appends the new todo
-    if add_remove_edit_clear == "remove":
+    elif add_remove_edit_clear == "remove":
         removing_todo = int(input("Which # to-do would you like to remove: ")) # user choosing which todo number to remove
         del to_do_list[removing_todo - 1] #removes that specific todo in the index
-    if add_remove_edit_clear == "edit":
+    elif add_remove_edit_clear == "edit":
         editing_todo_index = int(input("Which # would you like to edit: ")) # user choosing which todo number they want to edit
         edited_newTodo = input("Whats your edited to do: ")
         to_do_list[editing_todo_index - 1] = edited_newTodo #replaces the existing todo with the new todo, at the same index
-    if add_remove_edit_clear == "clear":
+    elif add_remove_edit_clear == "clear":
         to_do_list = [] #list is cleared.
     
 
