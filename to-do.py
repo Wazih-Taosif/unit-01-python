@@ -1,10 +1,11 @@
 to_do_list = [] #users to do list
-count = 0 #count determines the number of items in the list / to-do list
+
 
 while True:
+    count = 0 # resets the list counter to 0. so that every #number of the todo's starts from 1.
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     print()
-    print("You current to-do's are: ")
+    print(f"You have {len(to_do_list)} to-do's: ")
     print()
     for x in to_do_list:
         count += 1 #The counter increments by 1 till the total number of items in the list
@@ -24,5 +25,5 @@ while True:
         to_do_list[editing_todo_index - 1] = edited_newTodo #replaces the existing todo with the new todo, at the same index
     if add_remove_edit_clear == "clear":
         to_do_list = [] #list is cleared.
-    count = 0 # resets the list counter to 0. so that every #number of the todo's starts from 1.
+    
 
