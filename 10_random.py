@@ -39,14 +39,34 @@ print()
 print("---------------Task3---------------")
 list_color = ["red", "blue", "green", "yellow", "purple"]
 output_list = []
-for colors in range(3):
-    chosen_color = random.choice(list_color)
-    if chosen_color in output_list:
+for colors in range(1000): #range 1000 just guarantees the loop to run as many times as we need, so that we can get 3 chosen colors which are all unique.
+    chosen_color = random.choice(list_color) #chooses a random color from the list
+    if chosen_color in output_list: #if chosen color is already chosen previously, it won't be picked again, by using 'continue' on the next line.
         continue
-    output_list.append(chosen_color)
+    output_list.append(chosen_color)#adding the chosen color to the output list.
+    if len(output_list) == 3:#We need only 3 colors....Breaks the loop after we get 3 colors in the list.
+        break
 print(output_list)
 """
 Task 4 (random module):
 Write a program that creates a list of numbers from 1 to 10, then shuffles the list
 and prints the shuffled result.
 """
+print()
+print("-----------------Task4----------------")
+
+original_list = []
+shuffled_list = []
+for num in range(1, 11):
+    original_list.append(num) #just prints number 1 to 10 in the original list
+
+print(f"The original list is: {original_list}")
+
+for x in range(1000): #iterates enough time to get unique 10 numbers.
+    chosen_number = random.choice(original_list)
+    if chosen_number in shuffled_list:
+        continue #does not let already chosen number to get reprinted
+    shuffled_list.append(chosen_number)
+    if len(shuffled_list) == 10:#only allows 10 items in the new shuffled list.
+        break
+print(f"The shuffled list is: {shuffled_list}")
