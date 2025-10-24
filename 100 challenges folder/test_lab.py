@@ -1,11 +1,19 @@
 """
-Example 3: List Items
+Example 5: Else/Finally
+Modify the following code to include an else block to execute code if no exceptions occur 
+and a finally block to ensure that a certain action is always performed, regardless of whether an exception is raised.
 """
-
-def get_item(lst, index):
-    item = lst[index]
-    print("Item:", item)
+def process_file(filename):
+    try:
+        with open(filename, 'r') as file:
+            contents = file.read()
+    except FileNotFoundError:
+        print("Error: File not found.")
+    else:
+        print("File contents:", contents)
+    finally:
+        print()
+        print("----------End of file content-----------")
 
 # Example usage:
-my_list = [1, 2, 3]
-get_item(my_list, 5)
+process_file("example.txt")
