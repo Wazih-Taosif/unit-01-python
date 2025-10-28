@@ -66,7 +66,7 @@ def reverse_string(string):
 assert reverse_string("hello") == "olleh" #simple 1 word
 assert reverse_string("Abc") == "cbA" #upper & lower cases
 assert reverse_string("-,./123") == "321/.,-" #symbols & numbers
-assert reverse_string("a b") == "b a" #spaces
+assert reverse_string("a.  b") == "b  .a" #spaces
 assert reverse_string("long sentences like this") == "siht ekil secnetnes gnol" # multiple words
 
 """
@@ -91,6 +91,12 @@ def fibonacci(n):
 #Testing
 assert fibonacci(0) == 0 
 assert fibonacci(5) == 5
+try:
+  assert fibonacci(-2) == -1 #leads to AssertionError. since negafibonacci isnt considered
+except AssertionError: #error occurs, thus printing error message.
+  print()
+  print("----------------Exercise 4-------------")
+  print("AssertionError occured because negafibonacci isn't considered in the code.")
 
 """
 Exercise 5: Email Validation
@@ -111,7 +117,7 @@ def is_valid_email(email):
   return re.match(email_regex, email) is not None
 #Testing
 # output True if email is correct(has '@' symbol, has domain, has TLD extension)
-assert is_valid_email("wazih@gmail.com") == True 
+assert is_valid_email("ok@gmail.com") == True 
 assert is_valid_email("hello@gmail.net") == True 
 assert is_valid_email("hi@yahoo.org") == True
 #invalid emails....
@@ -120,4 +126,3 @@ assert is_valid_email('@com') == False #no domain between @ and com, no username
 assert is_valid_email("hello@.com") == False#no domain
 assert is_valid_email("hello@gmail") == False #no TLD extension
 assert is_valid_email("@gmail.com") == False #no username
-
