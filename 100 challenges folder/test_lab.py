@@ -1,19 +1,14 @@
-"""
-Example 5: Else/Finally
-Modify the following code to include an else block to execute code if no exceptions occur 
-and a finally block to ensure that a certain action is always performed, regardless of whether an exception is raised.
-"""
-def process_file(filename):
-    try:
-        with open(filename, 'r') as file:
-            contents = file.read()
-    except FileNotFoundError:
-        print("Error: File not found.")
-    else:
-        print("File contents:", contents)
-    finally:
-        print()
-        print("----------End of file content-----------")
+import random
 
-# Example usage:
-process_file("example.txt")
+randnumber = random.randint(0,100)
+guess = 0
+
+while guess < 4:
+    user_attempt = input("Guess the correct number between 0-100 : ")
+    try:
+        user_attempt = int(user_attempt)
+    except ValueError:
+        print("Please type a number! ")
+        continue
+    if user_attempt == randnumber:
+        print("Bravo! You guessed the correct number. ")
