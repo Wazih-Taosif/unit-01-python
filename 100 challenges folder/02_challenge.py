@@ -22,12 +22,14 @@ guess = 0
 attempt = 0
 
 while guess != random_word:
-
+    if guess == random_word:
+        print(f"You got it!!")
+        break
     guess = input("Guess the wordle: ")
     for char in guess:
         if char in random_word:
             print(f"{char} is in the wordle.")
     attempt += 1
-else:
+
 
 
